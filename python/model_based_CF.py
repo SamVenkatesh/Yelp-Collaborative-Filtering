@@ -48,7 +48,7 @@ predictions = model.predictAll(testdata).map(lambda r: ((r[0], r[1]), float(r[2]
 ratesAndPreds = tr.join(predictions)
 
 MSE = ratesAndPreds.map(lambda r: (r[1][0] - r[1][1])**2).mean()**0.5
-print("Mean Squared Error = " + str(MSE))
+print("RMSE = " + str(MSE))
 time_end = time.time()
 
 print("Total time = "+str(time_end - time_start))
